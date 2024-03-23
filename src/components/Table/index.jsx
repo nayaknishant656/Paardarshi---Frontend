@@ -1,6 +1,7 @@
 import styles from "./styles.module.css";
 
 const Table = ({ products }) => {
+	let link = "https://nawnitstudio.000webhostapp.com/certificate/index.html";
 	return (
 		<>
 			{/* <div className={styles.container}>
@@ -46,7 +47,7 @@ const Table = ({ products }) => {
 								<td>{user.amount}/-</td>
 								<td>{user.adress}</td>
 								<td>{user.year}</td>
-								<td><a href={user.img}>recipt-link</a></td>
+								<td><a href={link}>recipt-link</a></td>
 							</tr>
 						))}
 					</tbody>
