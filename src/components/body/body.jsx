@@ -11,7 +11,7 @@ export default function Body() {
     const [obj, setObj] = useState({});
     const [sort, setSort] = useState({ sort: "rating", order: "desc" });
     // const [filterGenre, setFilterGenre] = useState([]);
-    const [page, setPage] = useState(2);
+    const [page, setPage] = useState(1);
     const [search, setSearch] = useState("");
 const base_url = 'https://backend-chi-woad.vercel.app/shoes';
     useEffect(() => {
