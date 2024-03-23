@@ -26,10 +26,10 @@
 	margin: 0 5px;
 	box-shadow: var(--box-shadow);
 	cursor: pointer;
-	background-color: white;
 }
 
 .active {
 	background-color: var(--blue);
-	color: white;
+	color: rgb(255, 0, 0);
+	border: solid 1px black;
 }
