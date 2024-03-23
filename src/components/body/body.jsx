@@ -13,7 +13,7 @@ export default function Body() {
     // const [filterGenre, setFilterGenre] = useState([]);
     const [page, setPage] = useState(1);
     const [search, setSearch] = useState("");
-const base_url = 'https://backend-chi-woad.vercel.app/shoes';
+    const base_url = 'https://backend-chi-woad.vercel.app/shoes';
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -21,92 +21,42 @@ const base_url = 'https://backend-chi-woad.vercel.app/shoes';
                 const url = `${base_url}?page=${page}&sort=${sort.sort},${sort.order}&search=${search}`;
                 const { data } = await axios.get(url);
                 setObj(data);
-              console.log(obj);
+                console.log(obj);
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
         };
         fetchData();
-    }, [sort,page, search]);
+    }, [sort, page, search]);
     return (
         <>  <center><h3>Payers Details :-</h3></center>
-            <main className='main-body'>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Amount</th>
-                            <th>Date</th>
-                            <th>Certificate Link</th>
-                            <th>Person Admitted</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {/* {obj.map(user => (
-                            <tr key={user.id}>
-                                <td>{user.id}</td>
-                                <td>{user.name}</td>
-                                <td>{user.year}</td>
-                                 <td>Date{new Date().toLocaleDateString()}</td>
-                                 <td>{user.Clink}</td>
-                                 <td>{user.padmitted}</td>
-                            </tr>
-                        ))} */}
-                    </tbody>
-                </table>
-            </main>
-
-
-
-
-
-
-
-
-
             <div className="wrapper">
-			<div className="container">
-				<div className="head">
-					<img src="./images/logo.png" alt="logo" className="logo" />
-					<Search setSearch={(search) => setSearch(search)} />
-				</div>
-				<div className="body">
-					<div className="table_container">
-                    <Table products={obj.products ? obj.products : []} />
-						<Pagination
-							page={page}
-							limit={obj.limit ? obj.limit : 0}
-							total={obj.total ? obj.total : 0}
-							setPage={(page) => setPage(page)}
-						/>
-					</div>
-					<div className="filter_container">
-						<Sort sort={sort} setSort={(sort) => setSort(sort)} />
-						{/* <Genre
+                <div className="container">
+                    <div className="head">
+                        <img src="./images/logo.png" alt="logo" className="logo" />
+                        <Search setSearch={(search) => setSearch(search)} />
+                    </div>
+                    <div className="body">
+                        <div className="table_container">
+                            <Table products={obj.products ? obj.products : []} />
+                            <Pagination
+                                page={page}
+                                limit={obj.limit ? obj.limit : 0}
+                                total={obj.total ? obj.total : 0}
+                                setPage={(page) => setPage(page)}
+                            />
+                        </div>
+                        <div className="filter_container">
+                            <Sort sort={sort} setSort={(sort) => setSort(sort)} />
+                            {/* <Genre
 							filterGenre={filterGenre}
 							genres={obj.genres ? obj.genres : []}
 							setFilterGenre={(genre) => setFilterGenre(genre)}
 						/> */}
-					</div>
-				</div>
-			</div>
-		</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
     );
 }
