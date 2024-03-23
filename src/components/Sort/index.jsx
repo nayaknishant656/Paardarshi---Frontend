@@ -22,7 +22,7 @@ const Sort = ({ sort, setSort }) => {
 				defaultValue={sort.sort}
 			>
 				<option value="year">Year</option>
-				<option value="rating">Rating</option>
+				<option value="rating">Amount</option>
 			</select>
 			<button className={styles.arrow_btn} onClick={onArrowChange}>
 				<p className={styles.up_arrow}>&uarr;</p>
