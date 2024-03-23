@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7e0603d3.css",
+    "main.js": "/static/js/main.5f095f97.js",
+    "static/media/niti-logo-website.jpg": "/static/media/niti-logo-website.36482a7bf3758dac7a1f.jpg",
+    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/index.html",
+    "main.7e0603d3.css.map": "/static/css/main.7e0603d3.css.map",
+    "main.5f095f97.js.map": "/static/js/main.5f095f97.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7e0603d3.css",
+    "static/js/main.5f095f97.js"
+  ]
+}
