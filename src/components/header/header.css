@@ -43,16 +43,21 @@ header {
     /* border: solid black 1px; */
     padding: 13px;
     display: flex;
+    display: flex;
+    /* border: solid red 1px; */
+    width: 70% o;
+    padding: 13px;
 }
 
 .left-parent>nav>ul {
     display: flex;
+    width: 50%;
 }
 
 .left-parent>nav>ul>li {
     list-style: none;
+    margin: 0 5px;
     text-decoration: none;
-    margin: 0px 35px;
 }
 
 .left-parent>nav>ul>li>a {
