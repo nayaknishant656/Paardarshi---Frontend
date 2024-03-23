@@ -26,3 +26,13 @@ table > tbody > tr > td
 {
     border: solid 1px black;
 }
+.head
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.head > input[search]{
+    border: solid red 1px;
+    width: 50%;
+}
