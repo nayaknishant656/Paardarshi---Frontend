@@ -21,7 +21,6 @@ export default function Body() {
                 const url = `${base_url}?page=${page}&sort=${sort.sort},${sort.order}&search=${search}`;
                 const { data } = await axios.get(url);
                 setObj(data);
-                console.log(obj);
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
