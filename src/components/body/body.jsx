@@ -9,7 +9,7 @@ import "./body.css";
 export default function Body() {
     // const [users, setUsers] = useState([]);
     const [obj, setObj] = useState({});
-    const [sort, setSort] = useState({ sort: "rating", order: "desc" });
+    const [sort, setSort] = useState({ sort: "si", order: "asc" });
     // const [filterGenre, setFilterGenre] = useState([]);
     const [page, setPage] = useState(1);
     const [search, setSearch] = useState("");
