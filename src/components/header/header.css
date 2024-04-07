@@ -7,10 +7,9 @@
 header {
     display: flex;
     align-items: center;
-    padding: 10px 5%;
+    padding: 40px 7%;
     border-bottom: solid black 1px;
     background-color: rgba(91, 175, 105, 0.171);
-
 }
 
 .left-parent {
@@ -19,10 +18,7 @@ header {
 }
 
 .right-parent {
-    height: 90px;
-    display: flex;
     align-items: center;
-
 }
 
 .right-parent>img {

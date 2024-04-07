@@ -4,6 +4,7 @@ import Sort from "../Sort/index";
 import Pagination from "../Pagination/index";
 import Search from "../Search/index";
 import axios from "axios";
+import FontAwesome from 'react-fontawesome'
 import "./body.css";
 
 export default function Body() {
@@ -32,7 +33,7 @@ export default function Body() {
             <div className="wrapper">
                 <div className="container">
                     <div className="head">
-                        <img src="./images/logo.png" alt="logo" className="logo" />
+                        <FontAwesome icon="fas fa-search" />
                         <Search setSearch={(search) => setSearch(search)} />
                     </div>
                     <div className="body">
