@@ -47,7 +47,7 @@ export default function Body() {
                             />
                         </div>
                         <div className="filter_container">
-                            <Sort sort={sort} setSort={(sort) => setSort(sort)} />
+                            {/* <Sort sort={sort} setSort={(sort) => setSort(sort)} /> */}
                             {/* <Genre
 							filterGenre={filterGenre}
 							genres={obj.genres ? obj.genres : []}
