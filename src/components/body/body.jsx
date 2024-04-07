@@ -29,7 +29,7 @@ export default function Body() {
         fetchData();
     }, [sort, page, search]);
     return (
-        <>  <center><h3>Payers Details :-</h3></center>
+        <>  <center><br></br><h3>Payers Details :-</h3><br></br></center>
             <div className="wrapper">
                 <div className="container">
                     <div className="head">
