@@ -6,6 +6,12 @@
 main
 {
     background-color: rgba(74, 107, 74, 0.24) ;
-    height: 20vh;
     color: pink;
+    display: flex;
+    justify-content: center;
+}
+.parent-div
+{
+    color: black;
+    padding: 5px 3%;
 }
