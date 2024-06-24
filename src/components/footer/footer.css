@@ -1,22 +1,38 @@
-*{
-    padding:0;
+* {
+    padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-main
-{
-    background-color: rgb(0, 0, 0) ;
+
+main {
+    background-color: rgb(0, 0, 0);
     color: pink;
     display: flex;
     justify-content: center;
+    position: relative;
 }
-.parent-div
-{
+
+.parent-div {
     color: rgb(255, 255, 255);
     padding: 5px 10%;
+    position: relative;
 }
-.link
-{
+
+.link {
     color: white;
     font-style: italic;
+}
+
+.p_style_name {
+    color: red;
+    font-size: 0.8rem;
+    position: absolute;
+    right: 19px;
+    bottom: 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .p_style_name {
+        transform: translate(122px, -172px) rotate(45deg) translateX(15px) rotate(45deg);
+    }
 }

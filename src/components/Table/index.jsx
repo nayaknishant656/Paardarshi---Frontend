@@ -2,6 +2,14 @@ import styles from "./styles.module.css";
 
 const Table = ({ products }) => {
 	let link = "https://nawnitstudio.000webhostapp.com/certificate/index.html";
+	function trimToComma(inputString) {
+		const commaIndex = inputString.indexOf(',');
+		if (commaIndex !== -1) {
+			return inputString.substring(0, commaIndex);
+		} else {
+			return inputString;
+		}
+	}
 	return (
 		<>
 			{/* <div className={styles.container}>
@@ -40,33 +48,19 @@ const Table = ({ products }) => {
 						</tr>
 					</thead>
 					<tbody>
-						{products.map(user => (
-							<tr key={user._id}>
-								<td>{user.si}</td>
-								<td>{user.name}</td>
-								<td>{user.amount}/-</td>
-								<td>{user.adress}</td>
-								<td>{user.year}</td>
-								<td><a href={link}>recipt-link</a></td>
-							</tr>
-						))}
-					</tbody>
+                {products.map(user => (
+                    <tr key={user._id}>
+                        <td>{user.si}</td>
+                        <td>{trimToComma(user.name)}</td>
+                        <td>{user.amount}/-</td>
+                        <td>{user.adress}</td>
+                        <td>{user.year}</td>
+                        <td><a href={link}>recipt-link</a></td>
+                    </tr>
+                ))}
+            </tbody>
 				</table>
 			</main>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 		</>
 	);
 };

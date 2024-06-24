@@ -13,6 +13,7 @@ export default class footer extends Component {
           <p>i have been building stuff when i was 17 so this is no new to me</p>
           <p>but it was fun project :) builded in 5 days</p><br></br>
           <p>~nishant</p>
+          <p className='p_style_name'>DEPLOYED TO PRODUCTION ON 20/03/2024</p>
         </div>
       </main>
     )
