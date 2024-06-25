@@ -2,6 +2,8 @@ import styles from "./styles.module.css";
 
 const Table = ({ products }) => {
 	let link = "https://nawnitstudio.000webhostapp.com/certificate/index.html";
+	const slicedItems = products.slice(0, 10)
+	console.log(slicedItems)
 	return (
 		<>
 			{/* <div className={styles.container}>
