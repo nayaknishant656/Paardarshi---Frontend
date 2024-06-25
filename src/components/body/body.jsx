@@ -14,8 +14,7 @@ export default function Body() {
     // const [filterGenre, setFilterGenre] = useState([]);
     const [page, setPage] = useState(1);
     const [search, setSearch] = useState("");
-    const base_url = 'https://backend-chi-woad.vercel.app/shoes';
-
+    const base_url = 'https://backend-chi-woad.vercel.app/durgapj';
     useEffect(() => {
         const fetchData = async () => {
             try {
