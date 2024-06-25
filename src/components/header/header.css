@@ -47,7 +47,6 @@ header {
 
 .left-parent>nav>ul {
     display: flex;
-    width: 50%;
 }
 
 .left-parent>nav>ul>li {

@@ -12,7 +12,7 @@ const Header = () => {
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
-          <li><a href="whatsapp://send?text=https://fron-pardar.vercel.app/" data-action="share/whatsapp/share">Share via Whatsapp</a></li>
+          <a href="whatsapp://send?text=https://fron-pardar.vercel.app/" data-action="share/whatsapp/share">Share via Whatsapp</a>
         </ul>
       </nav></div>
     </header>
