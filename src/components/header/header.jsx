@@ -1,9 +1,12 @@
 import React from 'react';
 import "./header.css"
 import logo from "./niti-logo-website.jpg"
+
 // Header component
 const Header = () => {
   return (
+
+    <>
     <header>
       <div className='right-parent'><h2>पारदर्शी</h2><p>सत्य ही विश्वास है</p></div>
       
@@ -16,6 +19,9 @@ const Header = () => {
         </ul>
       </nav></div>
     </header>
+   
+    </>
+    
   );
 }
 

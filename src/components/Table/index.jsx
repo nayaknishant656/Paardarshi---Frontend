@@ -1,4 +1,5 @@
 import styles from "./styles.module.css";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Table = ({ products }) => {
 	let link = "https://nawnitstudio.000webhostapp.com/certificate/index.html";
@@ -14,6 +15,7 @@ const Table = ({ products }) => {
 
 	return (
 		<>
+		 
 			{/* <div className={styles.container}>
 				<div className={styles.heading}>
 					<p className={styles.title_tab}>Title</p>

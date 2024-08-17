@@ -18,7 +18,7 @@ export default function Body() {
 
     useEffect(() => {
         const fetchData = async () => {
-            try {
+            try {s
                 // const url2 = 'http://localhost:4000/shoes';
                 const url = `${base_url}?page=${page}&sort=${sort.sort},${sort.order}&search=${search}`;
                 const { data } = await axios.get(url);
