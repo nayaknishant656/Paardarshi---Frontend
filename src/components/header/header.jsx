@@ -17,7 +17,7 @@ const Header = () => {
         <ul>
         <Link to="/jamin" >Ration Card Apply</Link><br></br>
           <li><Link to="/" >Home</Link></li>
-          <li><a href="#">About</a></li>
+          <li><a href="#"><Aboutt></Aboutt></a></li>
           <a href="whatsapp://send?text=https://fron-pardar.vercel.app/" data-action="share/whatsapp/share">Share via Whatsapp</a>
         </ul>
       </nav></div>
