@@ -1,5 +1,7 @@
 import styles from "./styles.module.css";
 import { FaWhatsapp } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import certificate from "../certificate/certificate";
 
 const Table = ({ products }) => {
 	let link = "https://nawnitstudio.000webhostapp.com/certificate/index.html";
@@ -11,8 +13,6 @@ const Table = ({ products }) => {
 			return inputString;
 		}
 	}
-
-
 	return (
 		<>
 		 
@@ -59,10 +59,10 @@ const Table = ({ products }) => {
                         <td>{user.amount}/-</td>
                         <td>{user.adress}</td>
                         <td>{user.year}</td>
-                        <td><a href={link}>recipt-link</a></td>
+						<td><a href="/">Link</a></td>
                     </tr>
                 ))}
-            </tbody>
+            </tbody>	
 				</table>
 			</main>
 		</>

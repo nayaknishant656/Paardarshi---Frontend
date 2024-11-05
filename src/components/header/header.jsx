@@ -1,6 +1,8 @@
 import React from 'react';
 import "./header.css"
+
 import logo from "./niti-logo-website.jpg"
+import {Link} from "react-router-dom"
 
 // Header component
 const Header = () => {
@@ -13,7 +15,8 @@ const Header = () => {
       <div className='left-parent'>
         <nav>
         <ul>
-          <li><a href="#">Home</a></li>
+        <Link to="/jamin" >Ration Card Apply</Link><br></br>
+          <li><Link to="/" >Home</Link></li>
           <li><a href="#">About</a></li>
           <a href="whatsapp://send?text=https://fron-pardar.vercel.app/" data-action="share/whatsapp/share">Share via Whatsapp</a>
         </ul>
