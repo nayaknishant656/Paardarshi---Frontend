@@ -59,7 +59,7 @@ const Table = ({ products }) => {
                         <td>{user.amount}/-</td>
                         <td>{user.adress}</td>
                         <td>{user.year}</td>
-						<td><a href="/"></a> <Link to="/jamin/" >Linkk</Link></td>
+						<td><a href="/"></a> <Link to={`/jamin/${user._id}`} >Linkk</Link></td>
                     </tr>
                 ))}
             </tbody>	
