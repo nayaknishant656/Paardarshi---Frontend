@@ -19,6 +19,9 @@ You may also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+
+https://claude.ai/chat/8298bc42-9808-4079-9fad-7b4599e45035(Previous Changes into the repo)
+
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
