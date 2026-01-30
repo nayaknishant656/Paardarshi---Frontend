@@ -1,7 +1,14 @@
-import React, { useEffect, useRef } from 'react';
-
+import React, { useEffect, useRef, useState } from 'react';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
+import './MyCanvas.css';
 
 function MyCanvas() {
+  const { id } = useParams();
+  const [shoe, setShoe] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   const canvasRef = useRef(null);
   const nameRef = useRef(null);
   const emailRef = useRef(null);
@@ -11,23 +18,62 @@ function MyCanvas() {
   const downloadBtnRef = useRef(null);
 
   useEffect(() => {
+    const fetchShoe = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+
+        const response = await axios.get(
+          `https://backend-paardarshi.vercel.app/shoes/${id}`
+        );
+
+        setShoe(response.data);
+      } catch (err) {
+        console.error("Failed to fetch Donors:", err);
+        setError(
+          err.response?.data?.message || 
+          "Failed to load Donors details. Please try again."
+        );
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (id) {
+      fetchShoe();
+    }
+  }, [id]);
+
+  useEffect(() => {
+    if (!canvasRef.current || !nameRef.current || !emailRef.current || !addressRef.current || !modeRef.current || !numberRef.current || !downloadBtnRef.current) {
+      return;
+    }
+
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
 
     const image = new Image();
-    image.crossOrigin = 'anonymous';  // Set crossOrigin attribute
+    image.crossOrigin = 'anonymous';
     image.src = 'https://i.postimg.cc/3NPSVVRb/background4.jpg';
-    image.onload = function () {
-      drawImage();
-    };
 
     const logo = new Image();
-    logo.crossOrigin = 'anonymous';  // Set crossOrigin attribute
+    logo.crossOrigin = 'anonymous';
     logo.src = 'https://i.postimg.cc/1RTpGDbX/logo.png';
-    logo.onload = function () {
-      drawImage();
-      staticText();
-    };
+
+    let imagesLoaded = 0;
+
+    function checkImagesLoaded() {
+      imagesLoaded++;
+      if (imagesLoaded === 2) {
+        drawImage();
+        staticText();
+        drawText();
+        drawBorder();
+      }
+    }
+
+    image.onload = checkImagesLoaded;
+    logo.onload = checkImagesLoaded;
 
     function drawImage() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -115,7 +161,6 @@ function MyCanvas() {
       downloadBtnRef.current.download = 'Certificate - ' + nameRef.current.value;
     });
 
-    // Cleanup event listeners on unmount
     return () => {
       if (nameRef.current) nameRef.current.removeEventListener('input', updateCanvas);
       if (emailRef.current) emailRef.current.removeEventListener('input', updateCanvas);
@@ -123,39 +168,81 @@ function MyCanvas() {
       if (modeRef.current) modeRef.current.removeEventListener('input', updateCanvas);
       if (numberRef.current) numberRef.current.removeEventListener('input', updateCanvas);
     };
-  }, []);
+  }, [shoe]);
+
+  if (loading) {
+    return (
+      <div className="shoe-detail-loading">
+        <div className="spinner"></div>
+        <p>Loading shoe details...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="shoe-detail-error">
+        <h2>Oops!</h2>
+        <p>{error}</p>
+        <button onClick={() => window.location.reload()}>
+          Try Again
+        </button>
+      </div>
+    );
+  }
+
+  if (!shoe) {
+    return <div className="not-found">Shoe not found</div>;
+  }
+
+  const {
+    name,
+    adress,
+  } = shoe;
 
   return (
-    <>
-      <h1>Certificate Page</h1>
-      <canvas ref={canvasRef} width={800} height={500} />
-      <div className="container">
-        <label>
-          Name:
-          <input ref={nameRef} type="text" defaultValue="Nishant Kumar Nayak" />
-          <br />
-          Email:
+    <div className="certificate-page">
+      <h1 className="page-title">Certificate Page</h1>
+      
+      <div className="canvas-wrapper">
+        <canvas ref={canvasRef} width={800} height={500} />
+      </div>
+
+      <div className="form-container">
+        <div className="input-group">
+          <label>Name:</label>
+          <input ref={nameRef} type="text" defaultValue={name || "Nishant Kumar Nayak"} />
+        </div>
+
+        <div className="input-group">
+          <label>Email:</label>
           <input ref={emailRef} type="text" defaultValue="mobideas2@gmail.com" />
-          <br />
-          Address:
-          <input ref={addressRef} type="text" defaultValue="umedanda burmu ranchi jharkhand" />
-          <br />
-          Mode:
+        </div>
+
+        <div className="input-group">
+          <label>Address:</label>
+          <input ref={addressRef} type="text" defaultValue={adress || "umedanda burmu ranchi jharkhand"} />
+        </div>
+
+        <div className="input-group">
+          <label>Mode:</label>
           <select ref={modeRef}>
             <option value="offline">Offline</option>
             <option value="online">Online</option>
           </select>
-          <br />
-          Mobile Number:
+        </div>
+
+        <div className="input-group">
+          <label>Mobile Number:</label>
           <input ref={numberRef} type="number" defaultValue="6204616951" />
-        </label>
-        <br />
-        <a href="#" ref={downloadBtnRef} className="download__btn">
-          Download
+        </div>
+
+        <a href="#" ref={downloadBtnRef} className="download-btn">
+          <span className="download-icon">⬇</span>
+          Download Certificate
         </a>
-        <img src='./image/logo.png'></img>
       </div>
-    </>
+    </div>
   );
 }
 

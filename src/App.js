@@ -12,7 +12,8 @@ function App() {
       <Header />
       <Routes>
          <Route exact path="/" element={<Body/>}  />
-         <Route exact path="/jamin" element={<Certificate/>} />
+         <Route exact path="/jamin/:id" element={<Certificate/>} />
+            <Route exact path="/jamin" element={<Certificate/>} />
       </Routes>
       <Footer />
     </>
