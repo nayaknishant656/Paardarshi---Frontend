@@ -15,7 +15,7 @@ const Header = () => {
       <div className='left-parent'>
         <nav>
         <ul>
-        <Link to="/jamin" >Ration Card Apply</Link><br></br>
+        <Link to="/jamin" >Certificate Generation</Link><br></br>
           <li><Link to="/" >Home</Link></li>
           <li><a href="#">About</a></li>
           <a href="whatsapp://send?text=https://fron-pardar.vercel.app/" data-action="share/whatsapp/share">Share via Whatsapp</a>
