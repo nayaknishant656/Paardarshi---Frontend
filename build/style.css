@@ -1,0 +1,14 @@
+.whatsapp-share-button
+{
+    position: fixed;
+    padding: 6px;
+    top: 50vh;
+    background-color: #39ff39;
+    z-index: 10000;
+    border-radius: 14%;
+    right: 0;
+}
+.whatsapp-share-button > svg
+{
+    font-size: 30px;
+}
